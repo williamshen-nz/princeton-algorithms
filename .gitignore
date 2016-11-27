@@ -1,0 +1,6 @@
+# Ignore IntelliJ Stuff
+.idea/workspace.xml
+.idea/tasks.xml
+
+# Ignore build output
+/out/

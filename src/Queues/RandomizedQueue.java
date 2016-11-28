@@ -16,7 +16,7 @@ public class RandomizedQueue<Item> implements Iterable<Item> {
     private int elements = 0;
 
     /* Construct an empty randomized queue */
-    public RandomizedQueue() { }
+    public RandomizedQueue() { }    // here for the autograder
 
     /* Is the queue empty? */
     public boolean isEmpty() {
@@ -89,12 +89,10 @@ public class RandomizedQueue<Item> implements Iterable<Item> {
     }
 
     private class RandomizedQueueIterator implements Iterator<Item> {
-        private int currentIndex;
+        private int currentIndex = 0;
         private int[] randomIndexes;
 
         private RandomizedQueueIterator() {
-            currentIndex = 0;
-
             // Initialise the random index array and shuffle
             randomIndexes = new int[elements];
             for (int i = 0; i < elements; i++) {

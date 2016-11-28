@@ -23,7 +23,7 @@ public class Deque<Item> implements Iterable<Item> {
     private int elements = 0;
 
     /* Construct an empty deque */
-    public Deque() { }
+    public Deque() { }  // here for the autograder
 
     /* Is the deque empty? */
     public boolean isEmpty() {
@@ -121,16 +121,11 @@ public class Deque<Item> implements Iterable<Item> {
 
     /* Here we create our iterator using an inner class */
     private class DequeIterator implements Iterator<Item> {
-        private Node node;
-
-        private DequeIterator() {
-            // Set node to first node in the Deque
-            this.node = Deque.this.first;
-        }
+        private Node currNode = Deque.this.first;
 
         @Override
         public boolean hasNext() {
-            return node != null;
+            return currNode != null;
         }
 
         @Override
@@ -139,8 +134,8 @@ public class Deque<Item> implements Iterable<Item> {
                 throw new NoSuchElementException();
 
             // Set instance node to next node and return its value
-            Item item = node.value;
-            node = node.next;
+            Item item = currNode.value;
+            currNode = currNode.next;
             return item;
         }
 
